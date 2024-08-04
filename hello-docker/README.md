@@ -10,7 +10,7 @@ hello-docker is a demo that shows how to deploy a progressive web app created wi
 ## TLDR
 
 ```sh
-cd $GOPATH/src/github.com/maxence-charriere/go-app-demo/hello-docker
+cd ./go-app-demo/hello-docker
 make run
 ```
 
@@ -19,28 +19,23 @@ make run
 Go to the hello-docker directory:
 
 ```sh
-cd $GOPATH/src/github.com/maxence-charriere/go-app-demo/hello-docker
+cd ./go-app-demo/hello-docker
 ```
 
-Make sure the `hello` directory is built:
+Build the wasm binary
 
 ```sh
-cd ../hello && make build && cd -
-```
-
-Copy the hello wasm binary:
-
-```sh
-cp ../hello/app.wasm .
+GOARCH=wasm GOOS=js go build -o web/app.wasm
 ```
 
 The current directory should look like the following:
 
 ```sh
-# github.com/maxence-charriere/go-app-demo/hello-docker
+# ./go-app-demo/hello-docker
 .
 ├── README.md
-├── app.wasm
+├── web
+| └── app.wasm
 ├── dockerfile
 ├── go.mod
 ├── go.sum
@@ -56,7 +51,7 @@ docker build -t hello-docker .
 Run the Docker container:
 
 ```sh
-docker run -p 7000:7000 hello-docker
+docker run --rm -p 7000:7000 hello-docker
 ```
 
 ## Contribute

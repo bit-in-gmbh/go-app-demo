@@ -1,11 +1,10 @@
 build:
-	@cd ../hello && make build
-	@cp ../hello/app.wasm .
-	@docker build -t hello-docker .
+	GOARCH=wasm GOOS=js go build -o web/app.wasm
+	docker build -t hello-docker .
 
 run: build
-	docker run -p 7000:7000 hello-docker
+	docker run --rm -p 7000:7000 hello-docker
 
 clean:
 	@go clean
-	@rm app.wasm
+	@rm ./web/app.wasm
