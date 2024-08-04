@@ -7,17 +7,25 @@ hello is a demo that shows how to use the [go-app package](https://github.com/ma
 Go to the hello directory:
 
 ```sh
-cd $GOPATH/src/github.com/maxence-charriere/go-app-demo/hello
+cd ./go-app-demo/hello
 ```
+
+### Build the client
 
 ```sh
-GOARCH=wasm GOOS=js go build -o app.wasm
+GOARCH=wasm GOOS=js go build -o web/app.wasm
 ```
 
-Note that `app.wasm` binary requires to be moved at the server location that will serve it. See the other hello examples:
+### Build the server
 
-- [hello-docker](https://github.com/maxence-charriere/go-app-demo/tree/v6/hello-docker)
-- [hello-local](https://github.com/maxence-charriere/go-app-demo/tree/v6/hello-local)
+```sh
+go build
+```
+
+### Run the app
+```sh
+./hello
+```
 
 ## Contribute
 
