@@ -5,7 +5,7 @@ hello-local is a demo that shows how to run a progressive web app created with t
 ## TLDR
 
 ```sh
-cd $GOPATH/src/github.com/maxence-charriere/go-app-demo/hello-local-external-root
+cd ./go-app-demo/hello-local-external-root
 make run
 ```
 
@@ -14,7 +14,7 @@ make run
 Go to the hello-local-external-root directory:
 
 ```sh
-cd $GOPATH/src/github.com/maxence-charriere/go-app-demo/hello-local-external-root
+cd ./go-app-demo/hello-local-external-root
 ```
 
 Make sure the `hello-local` directory is built:
@@ -32,7 +32,7 @@ go build
 The current directory should look like the following:
 
 ```sh
-# github.com/maxence-charriere/go-app-demo/hello-local-external-root
+# ./go-app-demo/hello-local-external-root
 .
 ├── README.md
 ├── go.mod

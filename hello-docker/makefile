@@ -1,4 +1,5 @@
 build:
+	@mkdir -p web
 	GOARCH=wasm GOOS=js go build -o web/app.wasm
 	docker build -t hello-docker .
 

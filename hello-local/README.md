@@ -5,7 +5,7 @@ hello-local is a demo that shows how to run a progressive web app created with t
 ## TLDR
 
 ```sh
-cd $GOPATH/src/github.com/maxence-charriere/go-app-demo/hello-local
+cd ./go-app-demo/hello-local
 make run
 ```
 
@@ -14,19 +14,13 @@ make run
 Go to the hello-local directory:
 
 ```sh
-cd $GOPATH/src/github.com/maxence-charriere/go-app-demo/hello-local
+cd ./go-app-demo/hello-local
 ```
 
-Make sure the `hello` directory is built:
+Build the wasm binary
 
 ```sh
-cd ../hello && make build && cd -
-```
-
-Copy the hello wasm binary:
-
-```sh
-cp ../hello/app.wasm .
+mkdir web && GOARCH=wasm GOOS=js go build -o web/app.wasm
 ```
 
 Build the server:
@@ -41,7 +35,8 @@ The current directory should look like the following:
 # github.com/maxence-charriere/go-app-demo/hello-local
 .
 ├── README.md
-├── app.wasm
+├── web
+| └── app.wasm
 ├── go.mod
 ├── go.sum
 ├── hello-local
