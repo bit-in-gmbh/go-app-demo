@@ -66,7 +66,7 @@ func main() {
 		Description: "An Hello World! example",
 	})
 
-	if err := http.ListenAndServe(":8000", nil); err != nil {
+	if err := http.ListenAndServe(":7000", nil); err != nil {
 		log.Fatal(err)
 	}
 }
